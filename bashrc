@@ -2,7 +2,10 @@
 export ARCHFLAGS="-arch x86_64"
 
 export PATH=/usr/local/bin:$PATH
+export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 export PATH=$PATH:~/bin
+
+export LC_CTYPE="en_GB.UTF-8"
 
 function link_sublime() {
     mkdir -p ~/bin
@@ -16,6 +19,10 @@ function refresh() {
 
 function book() {
     cd ~/Dropbox/adventure\!/rpg_book/
+}
+
+function code() {
+    cd ~/code
 }
 
 function ds() {
