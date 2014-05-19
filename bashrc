@@ -17,6 +17,7 @@ function refresh() {
     echo "bash settings refreshed."
 }
 
+
 function book() {
     cd ~/Dropbox/adventure\!/rpg_book/
 }
@@ -36,3 +37,24 @@ function dss() {
 function dsl() {
     cd ~/code/dancing_squid/lib
 }
+
+function new_post() {
+    echo $1
+}
+
+# Opens the most recently edited blog post in sublime
+function last_post() {
+    year=`date +'%Y'`
+    path=~/code/rpg_blog/content/${year}
+    last_file=$(ls -tr ${path} | tail -1)
+    last_file_full_path="${path}/${last_file}"
+    subl $last_file_full_path
+}
+
+# Notes
+#
+# = modifying commands =
+# $ ehco foo bar baz
+# bash: ehco: command not found
+# $ ^ehco^echo
+# foo bar baz
