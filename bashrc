@@ -51,6 +51,8 @@ function last_post() {
     subl $last_file_full_path
 }
 
+alias cd..='cd ..'
+
 # Notes
 #
 # = modifying commands =
