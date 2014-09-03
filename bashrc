@@ -18,26 +18,6 @@ function refresh() {
 }
 
 
-function book() {
-    cd ~/Dropbox/adventure\!/rpg_book/
-}
-
-function code() {
-    cd ~/code
-}
-
-function ds() {
-    cd ~/code/dancing_squid/
-}
-
-function dss() {
-    cd ~/code/dancing_squid/src
-}
-
-function dsl() {
-    cd ~/code/dancing_squid/lib
-}
-
 function new_post() {
     echo $1
 }
@@ -52,6 +32,14 @@ function last_post() {
 }
 
 alias cd..='cd ..'
+alias ..='cd ..'
+
+alias dsl='cd ~/code/dancing_squid/lib'
+alias dss='cd ~/code/dancing_squid/dss'
+alias ds='cd ~/code/dancing_squid/'
+
+alias book='cd ~/Dropbox/adventure\!/rpg_book/'
+alias code='cd ~/code'
 
 # Notes
 #
