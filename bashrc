@@ -40,6 +40,10 @@ alias ds='cd ~/code/dancing_squid/'
 
 alias book='cd ~/Dropbox/adventure\!/rpg_book/'
 alias code='cd ~/code'
+alias blog='cd ~/code/rpg_blog/content/2014'
+
+export EDITOR='subl_wait'
+export GIT_EDITOR='subl -w'
 
 # Notes
 #
@@ -48,3 +52,4 @@ alias code='cd ~/code'
 # bash: ehco: command not found
 # $ ^ehco^echo
 # foo bar baz
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
