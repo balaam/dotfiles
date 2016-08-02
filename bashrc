@@ -4,7 +4,11 @@ export ARCHFLAGS="-arch x86_64"
 export PATH=/usr/local/bin:$PATH
 export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 export PATH=$PATH:~/bin
-export PATH=$PATH:/Library/TeX/Distributions/.DefaultTeX/Contents/Programs/texbin
+export PATH=$PATH:/Library/TeX/Distributions/.
+export PATH=/Applications/CMake.app/Contents/bin:$PATH
+
+
+export LD_LIBRARY_PATH=/opt/local/lib/:$LD_LIBRARY_PATH
 
 export LC_CTYPE="en_GB.UTF-8"
 
@@ -31,7 +35,7 @@ function setup_git {
 # Opens the most recently edited blog post in sublime
 function last_post() {
     year=`date +'%Y'`
-    path=~/code/rpg_blog/content/${year}
+    path=~/code/project_how_to_rpg/rpg_blog/content/${year}
     last_file=$(ls -tr ${path} | tail -1)
     last_file_full_path="${path}/${last_file}"
     subl $last_file_full_path
@@ -40,16 +44,21 @@ function last_post() {
 alias cd..='cd ..'
 alias ..='cd ..'
 
+alias rpg='cd ~/code/project_how_to_rpg'
+
+alias showblog='open ./output/index.html'
+
 alias dsl='cd ~/code/dancing_squid/lib'
 alias dss='cd ~/code/dancing_squid/dss'
 alias ds='cd ~/code/dancing_squid/'
 
 alias book='cd ~/Dropbox/adventure\!/rpg_book/'
 alias code='cd ~/code'
+alias cv='cd ~/Documents/me/job_2016'
 
 function blog {
     year=`date +'%Y'`
-    cd ~/code/rpg_blog/content/${year}
+    cd ~/code/project_how_to_rpg/rpg_blog/content/${year}
 }
 
 export EDITOR='subl_wait'

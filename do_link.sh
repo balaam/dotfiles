@@ -1,5 +1,6 @@
 ln -s ~/code/dotfiles/bash_profile ~/.bash_profile
 ln -s ~/code/dotfiles/bashrc ~/.bashrc
+ln -s ~/code/dotfiles/inputrc ~/.inputrc
 ln -s ~/code/dotfiles/slate ~/.slate
 
 mkdir /Library/KeyBindings
