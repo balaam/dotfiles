@@ -14,7 +14,8 @@ export LC_CTYPE="en_GB.UTF-8"
 
 function link_sublime() {
     mkdir -p ~/bin
-    ln -s "/Applications/Sublime Text 2.app/Contents/SharedSupport/bin/subl" ~/bin/subl
+    ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" ~/bin/subl
+    #ln -s "/Applications/Sublime Text 2.app/Contents/SharedSupport/bin/subl" ~/bin/subl
 }
 
 function refresh() {
