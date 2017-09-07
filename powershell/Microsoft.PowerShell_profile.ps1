@@ -50,16 +50,49 @@ function open
         ii @args 
     }
 }
-function code { Set-Location ~\Code }
+function code { Set-Location ~\code }
 function serve
 {
     echo "Address: http://$(ip4):8000/mercurial"
     hg serve --prefix mercurial --address  $(ip4)
 }
 
-function dinit
+function new_case
 {
-   echo "Initialising a mercurial checkout for a unity project" 
+    if(! $args)
+    {
+        echo "Please provide a case name."
+        return
+    }
+    $case_name = $args[0]
+    $folder = "~\code\cases\$case_name"
+    $srcdir = "~\code\dotfiles\unity"
+
+    echo "Creating new case at: [$folder]"
+    New-Item -ItemType Directory -Force -Path $folder
+
+    # 1. Init as a mercurial repro
+    cd $folder
+    hg init
+
+    # 2. Copy over .hgignore
+    Copy-Item "$srcdir\hgignore" "$folder\.hgignore"
+
+    # 3. Copy over the hgrc file
+    Copy-Item "$srcdir\hgrc" "$folder\.hg\hgrc"
+
+    # 4. Create a README.md
+    Copy-Item "$srcdir\default_readme" "$folder\README.md"
+
+    # 5. Create a project folder
+    New-Item -ItemType Directory -Force -Path "$folder\_unityproj"
+
+    # 6. Create a builds folder
+    New-Item -ItemType Directory -Force -Path "$folder\builds"
+
+    # 7. First commit
+    hg add .
+    hg commit -m "Opening new case."
 }
 
 function tsubl
