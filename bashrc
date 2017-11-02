@@ -18,6 +18,11 @@ function link_sublime() {
     #ln -s "/Applications/Sublime Text 2.app/Contents/SharedSupport/bin/subl" ~/bin/subl
 }
 
+function link_dropbox() {
+    mkdir -p ~/code
+    ln -s ~/Dropbox/rpg_blog/ ~/code/rpg_blog
+}
+
 function refresh() {
     source ~/.bash_profile
     echo "bash settings refreshed."
