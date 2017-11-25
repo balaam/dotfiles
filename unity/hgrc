@@ -1,0 +1,38 @@
+[extensions]
+largefiles =
+
+[largefiles]
+patterns = 
+	**.tif 
+	**.tga 
+	**.png 
+	**.wav 
+	**.fbx 
+	**.cubemap 
+	**.raw 
+	**.obj 
+	**.psd 
+	**.mov 
+	**.jpg 
+	**.ogg 
+	**.mp3 
+	**.bmp 
+	**.zip 
+	**.exr 
+	**.pdb
+	**.exe 
+	**.mgd 
+	**.apk 
+	**.obb 
+	**.dll 
+	**.so 
+	**.jar 
+	**.mdb 
+	**.metadata 
+	**.unitypackage
+	**.cache
+	**.rdc 
+	**.dat 
+	**.dex 
+	re:.+\.split[0-9]
+	
