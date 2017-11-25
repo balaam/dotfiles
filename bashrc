@@ -21,6 +21,9 @@ function link_sublime() {
 function link_dropbox() {
     mkdir -p ~/code
     ln -s ~/Dropbox/rpg_blog/ ~/code/rpg_blog
+
+    mkdir -p ~/lang
+    ln -s ~/Dropbox/lang ~/code/lang
 }
 
 function refresh() {
@@ -60,6 +63,7 @@ alias ds='cd ~/code/dancing_squid/'
 
 alias book='cd ~/Dropbox/adventure\!/rpg_book/'
 alias code='cd ~/code'
+alias lang='cd ~/lang'
 alias cv='cd ~/Documents/me/job_2016'
 alias restart_stage='ssh REMOTE_STAGE sudo service nginx restart'
 alias restart_prod='ssh REMOTE_PRODUCTION sudo service nginx restart'
