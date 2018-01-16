@@ -5,6 +5,11 @@ echo "Loading profile: [$profile]"
 
 $env:PATH = "C:\Perl\bin;$env:PATH"
 $env:PATHEXT="$env:PATHEXT;.PL"
+$env:HGEDITOR="subl -w"
+
+
+# See if this makes tab complete less horrible
+Set-PSReadlineKeyHandler -Key Tab -Function Complete
 
 function Reload-Profile {
     @(
@@ -51,10 +56,18 @@ function open
     }
 }
 function code { Set-Location ~\code }
+function cases { Set-Location ~\code\cases }
+function unity { Set-Location c:\unity }
+function unity1 { Set-Location c:\unity }
+function unity2 { Set-Location c:\unity2 }
 function serve
 {
-    echo "Address: http://$(ip4):8000/mercurial"
-    hg serve --prefix mercurial --address  $(ip4)
+    echo "Address: http://$(ip4):80/"
+    hg serve --address $(ip4) --port 80
+
+    # Don't think this can work on windows :(
+    # Only cmdserver mode supported is pipe
+    # and that uses stdin and out to communicate with client
 }
 
 function new_case
@@ -99,6 +112,11 @@ function tsubl
 {
     touch @args
     subl @args
+}
+
+function hgrc
+{
+    subl $env:userprofile\mercurial.ini
 }
 
 Set-Alias refresh Reload-Profile

@@ -31,6 +31,7 @@ function setup_git {
     git config --global user.name "Dan Schuller"
     git config --global user.email dan@godpatterns.com
     git config --global alias.co checkout
+    git config --global core.editor "subl -n -w"
 }
 
 # Opens the most recently edited blog post in sublime
