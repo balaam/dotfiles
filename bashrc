@@ -7,6 +7,9 @@ export PATH=$PATH:~/bin
 export PATH=$PATH:/Library/TeX/Distributions/.
 export PATH=/Applications/CMake.app/Contents/bin:$PATH
 
+export PYTHONPATH=/usr/bin/python
+export PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH
+
 
 export LD_LIBRARY_PATH=/opt/local/lib/:$LD_LIBRARY_PATH
 
@@ -16,6 +19,19 @@ function link_sublime() {
     mkdir -p ~/bin
     ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" ~/bin/subl
     #ln -s "/Applications/Sublime Text 2.app/Contents/SharedSupport/bin/subl" ~/bin/subl
+}
+
+function scratch() {
+    touch ~/lang/scratch.md
+    subl ~/lang/scratch.md
+}
+
+function link_dropbox() {
+    mkdir -p ~/code
+    ln -s ~/Dropbox/rpg_blog/ ~/code/rpg_blog
+
+    mkdir -p ~/lang
+    ln -s ~/Dropbox/lang ~/code/lang
 }
 
 function refresh() {
@@ -56,7 +72,14 @@ alias ds='cd ~/code/dancing_squid/'
 
 alias book='cd ~/Dropbox/adventure\!/rpg_book/'
 alias code='cd ~/code'
+alias lang='cd ~/lang'
 alias cv='cd ~/Documents/me/job_2016'
+alias restart_stage='ssh REMOTE_STAGE sudo service nginx restart'
+alias restart_prod='ssh REMOTE_PRODUCTION sudo service nginx restart'
+
+# ffmpeg -i input.mp4 output.mp3
+alias vlc='/Applications/VLC.app/Contents/MacOS/VLC'
+alias clean='~/code/dotfiles/util/clean.rb'
 
 function blog {
     year=`date +'%Y'`
