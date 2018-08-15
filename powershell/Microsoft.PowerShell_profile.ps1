@@ -4,6 +4,7 @@ echo "Loading profile: [$profile]"
 #chcp 65001 > $null
 
 $env:PATH = "C:\Perl\bin;$env:PATH"
+$env:PATH = "C:\Program Files\Sublime Text 3;$env:PATH"
 $env:PATHEXT="$env:PATHEXT;.PL"
 $env:HGEDITOR="subl -w"
 
